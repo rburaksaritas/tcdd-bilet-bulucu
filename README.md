@@ -88,10 +88,11 @@ The tool will periodically check for available seats according to the specified 
 ## Structure
 The project is organized as follows:
 - `src/`: Contains the source code files.
-  - `config.py`: Configuration file for setting up the tool.
-  - `email_notifications.py`: Handles sending email notifications.
-  - `seat_checker.py`: Core logic for checking seat availability.
+  - `api.py`: Handles sending post request with a valid basic authentication header. 
+  - `mail.py`: Handles sending email notifications.
+  - `functions.py`: Core logic for checking seat availability.
   - `utils.py`: Utility functions for date formatting and other common tasks.
+- `config.py`: Configuration file for setting up the tool.
 - `main.py`: The entry point of the application.
 - `stations.json`: JSON file containing station names and their corresponding IDs.
 - `requirements.txt`: Lists the required Python packages.
