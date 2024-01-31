@@ -3,12 +3,13 @@
 
 ## Genel Bakış
 
-TCDD Tren Koltuk Bulucu, kullanıcıların Türkiye Cumhuriyeti Devlet Demiryolları (TCDD) trenlerinde boş koltuk bulmasına yardımcı olan Python tabanlı bir araçtır. Belirli güzergahlar, tarihler ve isteğe bağlı olarak saatler için koltuk müsaitliğini kontrol etme işlemini otomatikleştirir. Müsait bir koltuk bulunduğunda, araç kullanıcıyı e-posta yoluyla bilgilendirir ve tren adı, yolculuk tarihi, vagon numarası ve koltuk numarası gibi detayları sağlar.
+TCDD Tren Koltuk Bulucu, kullanıcıların mevcut API servisinden yararlanarak Türkiye Cumhuriyeti Devlet Demiryolları (TCDD) trenlerinde boş koltuk bulmasına yardımcı olan Python tabanlı bir araçtır. Belirli güzergahlar, tarihler ve isteğe bağlı olarak saatler için koltuk müsaitliğini kontrol etme işlemini otomatikleştirir. Müsait bir koltuk bulunduğunda, araç kullanıcıyı e-posta yoluyla bilgilendirir ve tren adı, yolculuk tarihi, vagon numarası ve koltuk numarası gibi detayları sağlar.
 
 ## Özellikler
 - **Otomatik Koltuk Kontrolü**: Belirtilen tren güzergahlarında müsait koltukları otomatik olarak kontrol eder.
 - **E-posta Bildirimleri**: Müsait koltuklar bulunduğunda detaylı bilgilerle e-posta uyarıları gönderir.
 - **Yapılandırılabilir Aramalar**: Kalkış ve varış istasyonlarını, yolculuk tarihlerini ve isteğe bağlı olarak tercih edilen kalkış saatlerini belirleyebilirsiniz.
+- **API Odaklı Basitlik**: Hafif ve güvenilir işlemler için doğrudan API çağrıları kullanır. Bu yaklaşım, bağımlılıkları en aza indirir ve web sitesi değişikliklerinden kaynaklanabilecek sorunların potansiyelini azaltarak Selenium gibi web kazıma tekniklerine dayanan araçlardan ayrışır.
 
 ## Kurulum
 
@@ -30,7 +31,7 @@ TCDD Tren Koltuk Bulucu, kullanıcıların Türkiye Cumhuriyeti Devlet Demiryoll
    pip3 install -r requirements.txt
    ```
 
-## Yapılandırma
+## Yapılandırma (`config.py`)
 Araçları kullanmadan önce, `src` dizininde bulunan `config.py` dosyasını düzenleyerek yapılandırmanız gerekir. Aşağıdaki parametreleri tercihlerinize göre ayarlayın:
 
 - `binis_istasyon_adi`: Kalkış istasyonunun adı.
@@ -44,6 +45,35 @@ Araçları kullanmadan önce, `src` dizininde bulunan `config.py` dosyasını d�
 
 **Not:** `binis_istasyon_adi` ve `inis_istasyon_adi` geçerli istasyon adları olmalıdır. Mevcut istasyon adları için `stations.json` dosyasına bakınız.
 
+**Örnek 1:** 2 Şubat 2024 tarihli tüm seferleri kontrol eder. 
+```
+binis_istasyon_adi = "İstanbul(Söğütlüçeşme)"
+inis_istasyon_adi = "Ankara Gar"
+date = "2024-02-02"
+
+check_specific_hour = False
+
+email_address = "sender_mail@outlook.com" 
+email_password = "sender_password"
+destination_address = "receiver@gmail.com"
+
+sleep_time = 10
+```
+**Örnek 2:** 2 Şubat 2024 tarihli ve 08:04 kalkış saatli seferi kontrol eder. 
+```
+binis_istasyon_adi = "İstanbul(Söğütlüçeşme)"
+inis_istasyon_adi = "Ankara Gar"
+date = "2024-02-02"
+
+check_specific_hour = True
+hour = "08:02"
+
+email_address = "sender_mail@outlook.com" 
+email_password = "sender_password"
+destination_address = "receiver@gmail.com"
+
+sleep_time = 10
+```
 ## Kullanım
 Bilet bulucuyu başlatmak için `main.py` dosyasını çalıştırın:
 ```sh
