@@ -61,7 +61,7 @@ destination_address = "receiver@gmail.com"
 
 sleep_time = 10
 ```
-**Example 2:** Checks the specific journey at 08:04 on Feb 2, 2024. 
+**Example 2:** Checks the specific journey at 08:02 on Feb 2, 2024. 
 ```
 binis_istasyon_adi = "İstanbul(Söğütlüçeşme)"
 inis_istasyon_adi = "Ankara Gar"
