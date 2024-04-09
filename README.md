@@ -17,6 +17,7 @@ The TCDD Train Seat Finder is a Python-based tool designed to help users find av
 ### Prerequisites
 - Python 3.x
 - Pip (Python package installer)
+- Email address (@outlook.com domain is required) & password
 
 ### Setup
 1. Clone the repository to your local machine:
