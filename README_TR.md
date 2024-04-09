@@ -16,7 +16,7 @@ TCDD Tren Koltuk Bulucu, kullanıcıların mevcut API servisinden yararlanarak T
 ### Gereksinimler
 - Python 3.x
 - Pip (Python paket yükleyicisi)
-- Email (@outlook.com ile biten) & Şifre
+- Email (@outlook.com ile biten) & şifre
 
 ### Kurulum Adımları
 1. Depoyu yerel makinenize klonlayın:
