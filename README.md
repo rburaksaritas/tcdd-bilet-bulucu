@@ -2,7 +2,10 @@
 # TCDD Train Seat Finder (TCDD Bilet Bulucu)
 
 ## Overview
-<em>For Turkish see `README_TR.md`. | Türkçe anlatım için `README_TR.md`dosyasını inceleyin.</em>
+<em>For Turkish see `README_TR.md`. | Türkçe anlatım için `README_TR.md`dosyasını inceleyin.</em><br>
+
+<em>For the web application version that you can start using in browser immediately, see [TCDD Bilet Bulucu - WEB](https://github.com/rburaksaritas/tcdd-bilet-bulucu-web).</em>
+
 
 The TCDD Train Seat Finder is a Python-based tool designed to help users find available seats on Turkish State Railways (TCDD) trains by utilizing available API endpoints of TCDD. It automates the process of checking seat availability for specified routes, dates, and, optionally, times. When an available seat is found, the tool notifies the user via email, providing details such as the train name, journey date, wagon number, and seat number.
 
