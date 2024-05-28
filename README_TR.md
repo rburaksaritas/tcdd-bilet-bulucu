@@ -44,7 +44,11 @@ Araçları kullanmadan önce, `src` dizininde bulunan `config.py` dosyasını d�
 - `email_password`: Yukarıdaki e-posta hesabının şifresi.
 - `destination_address`: Bildirimi alacak e-posta adresi.
 
-**Not:** `binis_istasyon_adi` ve `inis_istasyon_adi` geçerli istasyon adları olmalıdır. Mevcut istasyon adları için `stations.json` dosyasına bakınız.
+**Not:** `binis_istasyon_adi` ve `inis_istasyon_adi` geçerli istasyon adları olmalıdır. Mevcut istasyon adları için `stations.json` dosyasına bakınız. Eğer istediğiniz istasyon yeni bir istasyonsa ve listede bulunmuyorsa aşağıdaki komutla istasyon listesini güncelleyebilirsiniz:
+```sh
+python3 util/fetch_stations.py
+``` 
+Komut `stations.json` içerisindeki istasyon listesini TCDD API üzerinden güncelleyecektir.
 
 **Örnek 1:** 2 Şubat 2024 tarihli tüm seferleri kontrol eder. 
 ```

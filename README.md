@@ -49,7 +49,11 @@ Before using the tool, you must configure it by editing the `config.py` file loc
 - `email_password`: Password for the email account above.
 - `destination_address`: Email address to receive the notification.
 
-**Note:**  `binis_istasyon_adi` and `inis_istasyon_adi` must be valid station names. See `stations.json` file for available station names.
+**Note:**  `binis_istasyon_adi` and `inis_istasyon_adi` must be valid station names. See `stations.json` file for available station names. If you want a station that is recently introduced, please update stations.json with the following command:
+```sh
+python3 util/fetch_stations.py
+``` 
+Which will update the stations list in `stations.json`.
 
 **Example 1:** Checks all journeys available on Feb 2, 2024. 
 ```
